@@ -55,7 +55,7 @@ public class FarmerRestController {
     }
 
     @PostMapping("newFarmer")
-    public void saveFarmer(@ModelAttribute("farmer") Farmer farmer) {
+    public void saveFarmer(@RequestBody Farmer farmer) {
         farmerService.saveFarmer(farmer);
     }
 

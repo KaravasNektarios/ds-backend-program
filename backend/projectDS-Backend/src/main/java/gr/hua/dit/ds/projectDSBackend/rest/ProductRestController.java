@@ -51,7 +51,7 @@ public class ProductRestController {
 
 
     @PostMapping("newProduct")
-    public void saveProduct(Product product) {
+    public void saveProduct(@RequestBody Product product) {
         productService.saveProduct(product);
     }
 

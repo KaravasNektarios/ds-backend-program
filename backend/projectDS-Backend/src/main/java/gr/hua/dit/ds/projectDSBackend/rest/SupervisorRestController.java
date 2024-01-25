@@ -53,7 +53,7 @@ public class SupervisorRestController {
     }
 
     @PostMapping("newSupervisor")
-    public void saveSupervisor(Supervisor supervisor) {
+    public void saveSupervisor(@RequestBody Supervisor supervisor) {
         supervisorService.saveSupervisor(supervisor);
 
     }
