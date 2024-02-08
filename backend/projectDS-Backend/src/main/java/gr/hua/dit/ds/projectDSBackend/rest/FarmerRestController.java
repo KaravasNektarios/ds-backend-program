@@ -6,6 +6,8 @@ import gr.hua.dit.ds.projectDSBackend.service.FarmerService;
 import io.swagger.v3.oas.annotations.Hidden;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PostAuthorize;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/farmers")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class FarmerRestController {
 
     @Autowired
@@ -22,7 +25,7 @@ public class FarmerRestController {
     public void setup() {
         if (!farmerService.existsFarmerById(1)){
             Farmer farmer = new Farmer("farmer1","farmer1","farmer1",
-                   "farmer1@gmail.com","pass123", "1212312312");
+                    "farmer1@gmail.com","pass123", "1212312312");
             farmerService.saveFarmer(farmer);
         }
 

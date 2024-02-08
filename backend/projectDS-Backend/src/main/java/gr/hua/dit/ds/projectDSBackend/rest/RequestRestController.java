@@ -19,6 +19,7 @@ import java.util.Set;
 
 @RestController
 @RequestMapping("/api/requests")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class RequestRestController {
 
 
@@ -55,9 +56,8 @@ public class RequestRestController {
 
 
     @PostMapping("newRequest")
-    public void saveRequest(Request request) {
+    public void saveRequest(@RequestBody Request request) {
         requestService.saveRequest(request);
     }
 
 }
-

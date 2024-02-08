@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/supervisors")
+@CrossOrigin(origins = "http://localhost:4200", allowCredentials = "true")
 public class SupervisorRestController {
 
     @Autowired
